@@ -58,7 +58,7 @@ Autocompleter.Base = Class.create({
     this.options.paramName    = this.options.paramName || this.element.name;
     this.options.tokens       = this.options.tokens || [];
     this.options.frequency    = this.options.frequency || 0.4;
-    this.options.minChars     = this.options.minChars || 1;
+    if(this.options.minChars==null) {this.options.minChars = 1;};
     this.options.onShow       = this.options.onShow ||
       function(element, update){
         if(!update.style.position || update.style.position=='absolute') {
